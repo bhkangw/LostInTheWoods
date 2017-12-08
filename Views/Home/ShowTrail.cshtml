@@ -1,0 +1,15 @@
+﻿
+<div class="jumbotron">
+@foreach(var t in ViewBag.trail) {
+    <h1>@t.Name 🏔</h1>
+    <p>Description: @t.Description</p>
+    <p>Trail Length: @t.Length Miles</p>
+    <p>Elevation Change: @t.Elevation feet</p>
+    <p>Latitude: @t.Latitude</p>
+    <p>Longitude: @t.Longitude</p>
+    <br>
+    <iframe width="600" height="450" frameborder="2" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAWlfbrhFaZTt3SJWEu1umU18S6ibOWNTI
+        &q=@t.Latitude,@t.Longitude" allowfullscreen>
+    </iframe>
+}
+</div>

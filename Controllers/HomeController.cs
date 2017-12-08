@@ -23,6 +23,7 @@ namespace LostInTheWoods.Controllers
         [Route("")]
         public IActionResult Index()
         {
+            ViewBag.trails = trailFactory.GetAllTrails();
             return View();
         }
 
@@ -46,9 +47,14 @@ namespace LostInTheWoods.Controllers
             return View("Add");
         }
 
-        public IActionResult Error()
+        [HttpGet]
+        [Route("trails/{id}")]
+        public IActionResult ShowTrail(int id)
         {
+            ViewBag.trail = trailFactory.GetSingleTrail(id);
             return View();
         }
+
+
     }
 }

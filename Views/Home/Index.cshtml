@@ -1,7 +1,8 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
+﻿<div class="container"><br>
+    <div class="jumbotron">
+        <h1>Lost in the Woods 🏞</h1>
+        <p>A place to share and see local hiking trails 🏕</p>
+    </div>
 <table class="table table-striped">
     <tr>
         <th>Name</th>
@@ -11,11 +12,12 @@
     @foreach(var t in ViewBag.trails)
     {
         <tr>
-            <td>@t.Name</td>
+            <td><a href="/trails/@t.id">@t.Name</a></td>
             <td>@t.Length miles</td>
             <td>@t.Elevation feet</td>
         </tr>
     }
 </table>
 <br>
-<a class="btn btn-primary" href="add">Add a New Trail</a>
+<a class="btn btn-primary pull-right" href="add">Add a New Trail</a>
+</div>

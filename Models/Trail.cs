@@ -25,11 +25,11 @@ namespace LostInTheWoods.Models
         public int Elevation {get;set;}
 
         [Required]
-        [Range(-90, 90)]
-        public double Longitude {get;set;}
+        [Range(-180, 180)]
+        public double Longitude { get; set; }
 
         [Required]
-        [Range(-180, 180)]
+        [Range(-90, 90)]
         public double Latitude {get;set;}
     }
 }

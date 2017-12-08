@@ -12,10 +12,6 @@ namespace LostInTheWoods.Factory
     {
         private readonly IOptions<MySqlOptions> MySqlConfig;
 
-        public TrailFactory()
-        {
-        }
-
         public TrailFactory(IOptions<MySqlOptions> config)
         {
             MySqlConfig = config;
@@ -43,7 +39,17 @@ namespace LostInTheWoods.Factory
             {
                 string query = "SELECT * FROM trails";
                 dbConnection.Open();
-                return dbConnection.Query<Trail>(query).ToList();
+                return dbConnection.Query<Trail>(query);
+            }
+        }
+
+        public IEnumerable<Trail> GetSingleTrail(int id)
+        {
+            using (IDbConnection dbConnection = Connection)
+            {
+                string query = $"SELECT * FROM trails WHERE id={id}";
+                dbConnection.Open();
+                return dbConnection.Query<Trail>(query);
             }
         }
     }
