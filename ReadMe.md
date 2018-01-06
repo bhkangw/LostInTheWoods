@@ -1,5 +1,5 @@
 ## Synopsis
-Lost In the Woods is a web app that that showcases various hiking trails and allows users to post their own favorites. I built this project using C# and ASP.NET Core framework.
+Lost In the Woods is a web app that showcases various hiking trails and allows users to post their own favorites. I built this project using C# and ASP.NET Core framework.
 
 ## Direct Goals
 1. Use my newly learned knowledge of Dapper ORM to map the db models with MySQL.
